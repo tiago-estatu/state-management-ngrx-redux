@@ -1,0 +1,31 @@
+/* DEVE SER SEPARADO EM 03 ARQUIVOS */
+
+// product
+export class ProductModel {
+    public _id: string;
+    public title: string;
+    public category: string;
+    public description: string;
+    public price: number;
+    public images: string[];
+}
+
+
+/*----------------------------------------------------------*/
+// cart 
+import { ProductModel } from './product.model';
+
+export class CartModel {
+    public products: ProductModel[] = [];
+    public total: number = 0;
+}
+
+
+
+/*----------------------------------------------------------*/
+// actions
+import { Action } from '@ngrx/store';
+export class ActionModel implements Action {
+    type: string;
+    payload: any;
+}
